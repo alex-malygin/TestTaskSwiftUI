@@ -21,15 +21,15 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .background(Color.blue)
                     .cornerRadius(8)
-                    .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
-                        
-                        if pressing {
-                            audioPlayer?.play()
-                        } else {
-                            audioPlayer?.pause()
-                        }
-                    }, perform: {})
                })
+            .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
+                
+                if pressing {
+                    audioPlayer?.play()
+                } else {
+                    audioPlayer?.pause()
+                }
+            }, perform: {})
             .onAppear {
                 initPlayer()
             }
